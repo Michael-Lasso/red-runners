@@ -1,0 +1,57 @@
+{
+	"preferences": {
+		"returnAllCandidateInfo": false,
+		"fallbackToGeographic": true,
+		"fallbackToPostal": true,
+		"maxReturnedCandidates": 1,
+		"distance": 150,
+		"streetOffset": 7,
+		"cornerOffset": 7,
+		"matchMode": "UNSPECIFIED",
+		"clientLocale": "en_US",
+		"clientCoordSysName": "epsg:4326",
+		"distanceUnits": "METERS",
+		"streetOffsetUnits": "METERS",
+		"cornerOffsetUnits": "METERS",
+		"mustMatchFields": {
+			"matchOnAddressNumber": false,
+			"matchOnPostCode1": false,
+			"matchOnPostCode2": false,
+			"matchOnAreaName1": false,
+			"matchOnAreaName2": false,
+			"matchOnAreaName3": false,
+			"matchOnAreaName4": false,
+			"matchOnAllStreetFields": false,
+			"matchOnStreetName": false,
+			"matchOnStreetType": false,
+			"matchOnStreetDirectional": false,
+			"matchOnPlaceName": false,
+			"matchOnInputFields": false
+		},
+		"returnFieldsDescriptor": {
+			"returnAllCustomFields": false,
+			"returnMatchDescriptor": false,
+			"returnStreetAddressFields": false,
+			"returnUnitInformation": false
+		},
+		"customPreferences": {}
+	},
+	"points": [
+		{
+			"country": "USA",
+			"geometry": {
+				"type": "point",
+				"coordinates": [
+					00000001,
+					00000002
+				],
+				"crs": {
+					"type": "name",
+					"properties": {
+						"name": "EPSG:4326"
+					}
+				}
+			}
+		}
+	]
+}

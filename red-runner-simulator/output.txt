@@ -1,0 +1,65 @@
+total 72
+-rw-r--r--   1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x   3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x   1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--   1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x   1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x   1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--   1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x   5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  11 michaellasso  staff   374 Oct 15 11:28 target
+total 80
+-rw-r--r--   1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x   3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x   1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--   1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x   1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x   1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--   1 michaellasso  staff   568 Oct 15 11:45 output.txt
+-rw-r--r--   1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x   5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  11 michaellasso  staff   374 Oct 15 11:28 target
+total 80
+-rw-r--r--   1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x   3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x   1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--   1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x   1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x   1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--   1 michaellasso  staff  1201 Oct 15 11:45 output.txt
+-rw-r--r--   1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x   5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  11 michaellasso  staff   374 Oct 15 11:28 target
+total 80
+-rw-r--r--  1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x  3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x  1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--  1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x  1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x  1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--  1 michaellasso  staff  1834 Oct 15 11:45 output.txt
+-rw-r--r--  1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x  5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  8 michaellasso  staff   272 Oct 15 11:51 target
+total 80
+-rw-r--r--   1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x   3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x   1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--   1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x   1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x   1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--   1 michaellasso  staff  2457 Oct 15 11:51 output.txt
+-rw-r--r--   1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x   5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  11 michaellasso  staff   374 Oct 15 11:51 target
+total 80
+-rw-r--r--   1 michaellasso  staff   577 Oct 15 10:46 build.gradle
+drwxr-xr-x   3 michaellasso  staff   102 Oct 15 10:46 gradle
+-rwxr-xr-x   1 michaellasso  staff  4971 Oct 15 10:46 gradlew
+-rw-r--r--   1 michaellasso  staff  2314 Oct 15 10:46 gradlew.bat
+-rwxr-xr-x   1 michaellasso  staff  7058 Oct 15 10:46 mvnw
+-rwxr-xr-x   1 michaellasso  staff  5006 Oct 15 10:46 mvnw.cmd
+-rw-r--r--   1 michaellasso  staff  3090 Oct 15 11:52 output.txt
+-rw-r--r--   1 michaellasso  staff  1300 Oct 15 10:46 pom.xml
+drwxr-xr-x   5 michaellasso  staff   170 Oct 15 10:50 src
+drwxr-xr-x  11 michaellasso  staff   374 Oct 15 11:51 target
