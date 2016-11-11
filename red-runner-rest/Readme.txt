@@ -1,3 +1,18 @@
+PROFILING TOOLS
+Activity Monitor
+
+66089104
+
+getinktattoo@hotmail.com
+
+COMMANDS FOR PROFILING
+top -> similar to activity monitor
+ps -> to show process
+lsof -p (number of process) -> list of files use by a process
+sudo fs_usage (number of process) -> file system usage of process
+heap (number of process) -> all the objects allocated for that process
+leaks (number of process) -> attempt to identify memory leakage(unreachable memory)
+
 SERVER
 host name: micha-Inspiron-560.local
 url: http://10.0.0.36:8080/
