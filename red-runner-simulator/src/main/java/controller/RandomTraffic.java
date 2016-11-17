@@ -31,7 +31,7 @@ public class RandomTraffic {
 		} else {
 			System.out.println("good driver: " + probability);
 		}
-		DAO.getConnection();
+//		DAO.getConnection();
 	}
 
 	// public static void main(String[] args) {

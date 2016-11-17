@@ -1,20 +1,22 @@
 package utils;
 
-public class Constants {
-	public static final String LONGITUDE = "-105.240976";
-	public static final String LATITUDE = "40.018301";
-	public static final String SEPARATOR = ":";
+import controller.Singleton;
 
-	public static final String TRAFFIC_FILE_PATH = "/Users/michaellasso/Documents/hackaton/make-haven/traffic_light.txt";
-	public static final String CHECKER_FILE_PATH = "/Users/michaellasso/Documents/hackaton/make-haven/checker.sh";
-	public static final String TIMESTAMP_FILE_PATH = "/Users/michaellasso/Documents/hackaton/make-haven/timestamp.txt";
-	public static final String COORDS_FILE_PATH = "/Users/michaellasso/Documents/hackaton/make-haven/coordinates.txt";
+public final class Constants {
+
+
+	public static final String RESOURCES = "/Resources/data.properties";
+	public static final String RESOURCES_PATH = "test.path";
+	public static final String TRAFFIC_FILE_PATH = Singleton.INSTANCE.getPath() + "/Resources/traffic_light.txt";
+	public static final String TIMESTAMP_FILE_PATH = Singleton.INSTANCE.getPath() + "/Resources/timestamp.txt";
+	public static final String COORDS_FILE_PATH = Singleton.INSTANCE.getPath() + "/Resources/coordinates.txt";
 
 	public static final String API_KEY = "uKpKvdPt9KDeb3b6DDEVo8S5QaiS1PmW";
 	public static final String SECRET = "ZYWf6F6AqxGZvWFh";
 
 	public static final int PROBABILITY = 100;
 	public static final int PROBABILITY_THRESHOLD = 35;// change to 35
+	public static final String SEPARATOR = ":";
 
 	public static final String URL = "jdbc:mysql://newhaven.c2ynl98zxc2y.us-east-1.rds.amazonaws.com:3306/";
 	public static final String USERNAME = "newHaven";
@@ -24,5 +26,6 @@ public class Constants {
 
 	public static final String JSON_LATITUDE = "00000001";
 	public static final String JSON_LONGITUDE = "00000002";
+
 
 }

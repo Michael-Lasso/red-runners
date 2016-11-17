@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.internal.util.Base64;
 
+import controller.Singleton;
 import utils.Constants;
 
 /**
@@ -52,7 +53,8 @@ public class GeoCodeSample {
 
 	private static final String COLON = ":";
 
-	private static final String REVERSE_GEOCODE_REQUEST_SRC = "\\src\\main\\resources\\reverseGeocodeRequest.json";
+	private static final String REVERSE_GEOCODE_REQUEST_SRC = Singleton.INSTANCE.getPath()
+			+ "Resources/reverseGeocodeRequest.json";
 
 	private static final String CURRENT_DIRECTORY = "user.dir";
 
@@ -62,15 +64,15 @@ public class GeoCodeSample {
 
 	private static final String REVERSE_GEOCODE_API = "reverseGeocode";
 
-//	public static void main(String[] args) {
-//
-//		// Acquires OAuth2 token
-//		acquireAuthToken();
-//
-//		// Gets reverse response as transient in JSON format
-//		Coordinates coord = new Coordinates(args[0], args[1]);
-//		getReverseGeocode(false, "premium", coord);
-//	}
+	// public static void main(String[] args) {
+	//
+	// // Acquires OAuth2 token
+	// acquireAuthToken();
+	//
+	// // Gets reverse response as transient in JSON format
+	// Coordinates coord = new Coordinates(args[0], args[1]);
+	// getReverseGeocode(false, "premium", coord);
+	// }
 
 	public static String getStreetName(Coordinates coords) {
 
@@ -162,8 +164,7 @@ public class GeoCodeSample {
 	@SuppressWarnings("rawtypes")
 	private static Entity buildGeocodeRequest(String resourceURL, Coordinates coord) throws IOException {
 
-		String currentDir = System.getProperty(CURRENT_DIRECTORY);
-		String path = currentDir + resourceURL;
+		String path = resourceURL;
 		BufferedReader reader = new BufferedReader(new FileReader(path.replace("\\", "/")));
 		String line = null;
 		StringBuilder builder = new StringBuilder();

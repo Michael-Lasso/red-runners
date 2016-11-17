@@ -39,9 +39,9 @@ public class ScheduledTasks {
 				coord.setName(street);
 				coord.setTimeStamp(System.currentTimeMillis() + "");
 
-				DAO.insertRecord(coord);
+//				DAO.insertRecord(coord);
 				System.out.println("Saved: " + coord.toString());
-			}
+			}	
 			System.out.println("\n\n\t---------------------+Starting new batch+---------------------");
 		}
 	}

@@ -71,7 +71,7 @@ public class DAO {
 		}
 	}
 
-	public static Connection getConnection() {
+	public Connection getConnection() {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -86,7 +86,7 @@ public class DAO {
 		return connection;
 	}
 
-	public static void insertRecord(Coordinates coords) {
+	public void insertRecord(Coordinates coords) {
 		String insertTableSQL = "INSERT INTO LOCATION (STREET_NAME, LATITUDE,  LONGITUDE,  TIMESTAMP) VALUES"
 				+ "(?,?,?,?)";
 		PreparedStatement preparedStatement;
@@ -105,7 +105,7 @@ public class DAO {
 		}
 	}
 
-	public static List<Coordinates> select() {
+	public List<Coordinates> select() {
 		Connection conn = null;
 		Statement stmt = null;
 		List<Coordinates> list = null;
@@ -155,11 +155,11 @@ public class DAO {
 		return list;
 	}// end main
 
-	public static void main(String[] args) {
-		DAO dao = new DAO();
-		Connection conn = getConnection();
-//		dao.delete(conn);
-		List<Coordinates> list = DAO.select();
-		list.forEach(a -> System.out.println(a));
-	}
+	// public static void main(String[] args) {
+	// DAO dao = new DAO();
+	// Connection conn = getConnection();
+	//// dao.delete(conn);
+	// List<Coordinates> list = DAO.select();
+	// list.forEach(a -> System.out.println(a));
+	// }
 }
