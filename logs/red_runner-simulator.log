@@ -1,0 +1,78 @@
+TEST
+2016-11-10 20:20:05,299[main] INFO  Application(15)  - ++++++++++STARTING SIMULATOR++++++++++++
+2016-11-10 20:20:07,559[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 1, at: -null, Milliseconds: null, Date: null, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:08,265[pool-1-thread-1] INFO  ScheduledTasks(31)  - 
+
+	---------------------+Saving lattest batch into DB and resetting files+---------------------
+2016-11-10 20:20:09,828[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -42 HOWE ST, Milliseconds: 1478827209602, Date: 10/11/2016 20:20:09, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:10,348[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -618 ELM ST, Milliseconds: 1478827210138, Date: 10/11/2016 20:20:10, Latitude: -72.941796, Longitude: 41.314745
+2016-11-10 20:20:10,813[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -42 HOWE ST, Milliseconds: 1478827210605, Date: 10/11/2016 20:20:10, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:10,813[pool-1-thread-1] INFO  ScheduledTasks(47)  - 
+
+	---------------------+Starting new batch+---------------------
+2016-11-10 20:20:10,814[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 44
+2016-11-10 20:20:11,557[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 12, at: -null, Milliseconds: null, Date: null, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:13,559[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 6, at: -null, Milliseconds: null, Date: null, Latitude: -72.937494, Longitude: 41.308877
+2016-11-10 20:20:15,555[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 19, at: -null, Milliseconds: null, Date: null, Latitude: -72.941796, Longitude: 41.314745
+2016-11-10 20:20:17,559[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 51
+2016-11-10 20:20:19,560[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 11, at: -null, Milliseconds: null, Date: null, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:21,560[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 1, at: -null, Milliseconds: null, Date: null, Latitude: -72.944875, Longitude: 41.310657
+2016-11-10 20:20:23,558[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 74
+2016-11-10 20:20:25,555[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 39
+2016-11-10 20:20:27,557[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 11, at: -null, Milliseconds: null, Date: null, Latitude: -72.937494, Longitude: 41.308877
+2016-11-10 20:20:27,726[pool-1-thread-1] INFO  ScheduledTasks(31)  - 
+
+	---------------------+Saving lattest batch into DB and resetting files+---------------------
+2016-11-10 20:20:28,234[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -42 HOWE ST, Milliseconds: 1478827228030, Date: 10/11/2016 20:20:28, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:28,667[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -115 DWIGHT ST, Milliseconds: 1478827228475, Date: 10/11/2016 20:20:28, Latitude: -72.937494, Longitude: 41.308877
+2016-11-10 20:20:29,153[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -618 ELM ST, Milliseconds: 1478827228955, Date: 10/11/2016 20:20:28, Latitude: -72.941796, Longitude: 41.314745
+2016-11-10 20:20:29,621[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -42 HOWE ST, Milliseconds: 1478827229416, Date: 10/11/2016 20:20:29, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:20:30,109[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -134 SHERMAN AVE, Milliseconds: 1478827229914, Date: 10/11/2016 20:20:29, Latitude: -72.944875, Longitude: 41.310657
+2016-11-10 20:37:40,311[main] INFO  Application(15)  - ++++++++++STARTING SIMULATOR++++++++++++
+2016-11-10 20:37:42,592[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 87
+2016-11-10 20:37:44,596[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 72
+2016-11-10 20:37:46,592[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 79
+2016-11-10 20:37:48,595[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 42
+2016-11-10 20:37:50,596[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 52
+2016-11-10 20:37:52,592[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 69
+2016-11-10 20:37:54,596[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 58
+2016-11-10 20:37:56,596[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 49
+2016-11-10 20:37:58,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 59
+2016-11-10 20:38:00,596[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 83
+2016-11-10 20:38:02,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 92
+2016-11-10 20:38:04,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 42
+2016-11-10 20:38:06,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 92
+2016-11-10 20:38:08,610[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 3, at: -null, Milliseconds: null, Date: null, Latitude: -72.941764, Longitude: 41.309924
+2016-11-10 20:38:10,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 94
+2016-11-10 20:38:12,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 46
+2016-11-10 20:38:14,598[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 28, at: -null, Milliseconds: null, Date: null, Latitude: -72.944875, Longitude: 41.310657
+2016-11-10 20:38:16,598[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 97
+2016-11-10 20:38:18,597[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 62
+2016-11-10 20:38:20,594[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 60
+2016-11-10 20:38:22,596[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 31, at: -null, Milliseconds: null, Date: null, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:38:22,764[pool-1-thread-1] INFO  ScheduledTasks(31)  - 
+
+	---------------------+Saving lattest batch into DB and resetting files+---------------------
+2016-11-10 20:38:24,467[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -314 ORCHARD ST, Milliseconds: 1478828304261, Date: 10/11/2016 20:38:24, Latitude: -72.941764, Longitude: 41.309924
+2016-11-10 20:38:24,978[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -134 SHERMAN AVE, Milliseconds: 1478828304764, Date: 10/11/2016 20:38:24, Latitude: -72.944875, Longitude: 41.310657
+2016-11-10 20:38:25,474[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -42 HOWE ST, Milliseconds: 1478828305262, Date: 10/11/2016 20:38:25, Latitude: -72.936249, Longitude: 41.308289
+2016-11-10 20:38:25,474[pool-1-thread-1] INFO  ScheduledTasks(47)  - 
+
+	---------------------+Starting new batch+---------------------
+2016-11-10 20:38:25,475[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 57
+2016-11-10 20:38:26,599[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 14, at: -null, Milliseconds: null, Date: null, Latitude: -72.939457, Longitude: 41.309457
+2016-11-10 20:38:28,598[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 62
+2016-11-10 20:40:43,475[main] INFO  Application(15)  - ++++++++++STARTING SIMULATOR++++++++++++
+2016-11-10 20:40:45,652[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 34, at: -null, Milliseconds: null, Date: null, Latitude: -72.941796, Longitude: 41.314745
+2016-11-10 20:40:46,830[pool-1-thread-1] INFO  ScheduledTasks(31)  - 
+
+	---------------------+Saving lattest batch into DB and resetting files+---------------------
+2016-11-10 20:40:48,434[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -153 DAY ST, Milliseconds: 1478828448217, Date: 10/11/2016 20:40:48, Latitude: -72.939457, Longitude: 41.309457
+2016-11-10 20:40:48,968[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -115 DWIGHT ST, Milliseconds: 1478828448745, Date: 10/11/2016 20:40:48, Latitude: -72.937494, Longitude: 41.308877
+2016-11-10 20:40:49,413[pool-1-thread-1] INFO  ScheduledTasks(45)  - Saved: -618 ELM ST, Milliseconds: 1478828449222, Date: 10/11/2016 20:40:49, Latitude: -72.941796, Longitude: 41.314745
+2016-11-10 20:40:49,413[pool-1-thread-1] INFO  ScheduledTasks(47)  - 
+
+	---------------------+Starting new batch+---------------------
+2016-11-10 20:40:49,414[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 25, at: -null, Milliseconds: null, Date: null, Latitude: -72.941764, Longitude: 41.309924
+2016-11-10 20:40:49,654[pool-1-thread-1] INFO  RandomTraffic(32)  - red light runner: 27, at: -null, Milliseconds: null, Date: null, Latitude: -72.944875, Longitude: 41.310657
+2016-11-10 20:40:51,652[pool-1-thread-1] INFO  RandomTraffic(34)  - good driver: 50

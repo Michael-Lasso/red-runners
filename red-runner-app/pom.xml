@@ -18,7 +18,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
-			
 		</dependency>
 		<!-- JSF Dependencies -->
 		<dependency>
@@ -26,13 +25,11 @@
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>7.0</version>
-			
 		</dependency>
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<version>1.2</version>
-			
 		</dependency>
 		<dependency>
 			<!-- JBoss/Weld Refrence Implementation for CDI on a Servlet Container -->
@@ -45,7 +42,6 @@
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
 			<version>2.2</version>
-			
 		</dependency>
 		<dependency>
 			<!-- This is the Mojarra Implementation of JSF -->
@@ -53,6 +49,12 @@
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.8-02</version>
 			<scope>runtime</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 	</dependencies>
 	<build>
