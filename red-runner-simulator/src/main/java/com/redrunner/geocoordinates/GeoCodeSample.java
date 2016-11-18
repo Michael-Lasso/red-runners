@@ -22,7 +22,6 @@ import org.glassfish.jersey.internal.util.Base64;
 import com.redrunner.controller.Singleton;
 import com.redrunner.utils.Constants;
 
-
 /**
  * Code sample for accessing Location Intelligence Geocode API. This program
  * demonstrates the various services of Location Intelligence Geocode API To
@@ -53,11 +52,6 @@ public class GeoCodeSample {
 	private static final String AUTH_HEADER = "Authorization";
 
 	private static final String COLON = ":";
-
-	private static final String REVERSE_GEOCODE_REQUEST_SRC = Singleton.INSTANCE.getPath()
-			+ "Resources/reverseGeocodeRequest.json";
-
-	private static final String CURRENT_DIRECTORY = "user.dir";
 
 	private static final String LINE_SEPERATOR = "line.separator";
 
@@ -147,8 +141,8 @@ public class GeoCodeSample {
 		String apiUrl = REVERSE_GEOCODE_API;
 		String data = null;
 		try {
-			data = processPOSTRequest(buildGeocodeRequest(REVERSE_GEOCODE_REQUEST_SRC, coord), responseTypeIsXml,
-					apiUrl, bundleType);
+			data = processPOSTRequest(buildGeocodeRequest(Constants.REVERSE_GEOCODE_REQUEST_SRC, coord),
+					responseTypeIsXml, apiUrl, bundleType);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

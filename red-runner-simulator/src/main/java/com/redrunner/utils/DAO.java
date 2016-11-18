@@ -71,7 +71,7 @@ public class DAO {
 		}
 	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -86,7 +86,7 @@ public class DAO {
 		return connection;
 	}
 
-	public void insertRecord(Coordinates coords) {
+	public static void insertRecord(Coordinates coords) {
 		String insertTableSQL = "INSERT INTO LOCATION (STREET_NAME, LATITUDE,  LONGITUDE,  TIMESTAMP) VALUES"
 				+ "(?,?,?,?)";
 		PreparedStatement preparedStatement;

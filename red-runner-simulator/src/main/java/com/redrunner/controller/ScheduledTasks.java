@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.redrunner.geocoordinates.Coordinates;
 import com.redrunner.geocoordinates.GeoCodeSample;
 import com.redrunner.utils.Constants;
+import com.redrunner.utils.DAO;
 import com.redrunner.utils.FileParser;
 
 @Component
@@ -40,9 +41,7 @@ public class ScheduledTasks {
 				coord.setName(street);
 				coord.setTimeStamp(System.currentTimeMillis() + "");
 
-
-
-//				DAO.insertRecord(coord);
+				DAO.insertRecord(coord);
 				logger.info("Saved: " + coord.toString());
 			}
 			logger.info("\n\n\t---------------------+Starting new batch+---------------------");

@@ -9,11 +9,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class Application {
 
-	static Logger logger = Logger.getLogger(Application.class);
-	
-    public static void main(String[] args) throws Exception {
-    	logger.info("++++++++++STARTING SIMULATOR++++++++++++");
-    	Singleton.INSTANCE.setPath(args[0]);
-        SpringApplication.run(Application.class);
-    }
+	static Logger log = Logger.getLogger(Application.class);
+
+	public static void main(String[] args) throws Exception {
+		log.info("++++++++++STARTING SIMULATOR++++++++++++");
+		log.info(args[0]);
+		Singleton.INSTANCE.setPath(args[0]);
+		SpringApplication.run(Application.class);
+	}
 }

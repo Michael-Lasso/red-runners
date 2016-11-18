@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Datasource">
+	<typeAlias alias="criteria" type="com.lokiz.ibatis.domain.Criteria" />
+	<typeAlias alias="coordinates" type="com.lokiz.ibatis.domain.Coordinates" />
+
+	<!-- //////////////////////////////////////// SELECT STATEMENTS //////////////////////////////////////////////// -->
+	<select id="select1" parameterClass="criteria" resultClass="coordinates">
+		<![CDATA[
+			SELECT * FROM LOCATION
+		]]>
+	</select>
+
+	<select id="getList" parameterClass="criteria" resultClass="coordinates">
+		<![CDATA[
+			SELECT * FROM LOCATION
+		]]>
+	</select>
+
+	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+	<!-- ///////////////////////////////////////// CLEAN DATABASE ///////////////////////////////////////////////// -->
+	<statement id="dropTempTable"> <![CDATA[drop table TEMP_TABLE]]></statement>
+</sqlMap>

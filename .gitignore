@@ -17,3 +17,5 @@ dependency-reduced-pom.xml
 *.iml
 *.idea
 /miscellaneous/*
+data-access.properties
+*.log

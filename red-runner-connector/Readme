@@ -1,0 +1,28 @@
+Michael Lasso, Software Developer
+
+Environment:
+-This project uses dependencies installed in the machine rather than having a lib folder with jar 
+
+files. The reason for this
+is so when the project is packaged with MAVEN, it can be done with all its dependencies bundled up with 
+
+the jar file.
+
+-If the nzjdbc (Netezza), ojdbc, sqljdbc artifactIds do not exist in your environment, you can install 
+
+them with the following command:
+
+-mvn install:install-file -Dfile=absolute/path/to/file.jar -DgroupId=com.groupid -
+
+DartifactId=artifactName -Dversion=number -Dpackaging=jar
+
+-Packaging with maven is not necessary, thus you can include the lib folder with jar files and add them 
+
+to build path. Just remember to
+delete dependencies from pom.xml.
+
+#-----------------------------------------------------------------------------------------------------#
+
+Algorithm:
+
+1.

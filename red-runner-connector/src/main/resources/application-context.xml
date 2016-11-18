@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="true"></property>
+		<property name="locations">
+			<list>
+				<value>classpath:/data-access.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSourceAvtest" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="sqlMapClientTemplatesAvtest" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean"
+		dependency-check="default">
+		<property name="configLocation" value="classpath:/sql-map-config-Extract.xml" />
+		<property name="dataSource" ref="dataSourceAvtest" />
+	</bean>
+
+	<bean id="mcisDAO" class="com.lokiz.ibatis.dao.ObejctDAO">
+		<property name="sqlMapClient" ref="sqlMapClientTemplatesAvtest" />
+	</bean>
+
+</beans>
+
+ 
