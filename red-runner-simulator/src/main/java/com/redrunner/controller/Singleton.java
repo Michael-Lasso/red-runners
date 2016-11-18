@@ -42,4 +42,8 @@ public enum Singleton {
 	public String getPath() {
 		return props.getProperty(Constants.RESOURCES_PATH);
 	}
+
+	public String simulatorEnabled() {
+		return props.getProperty(Constants.RESOURCES_PATH);
+	}
 }

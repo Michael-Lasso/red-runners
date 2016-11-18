@@ -3,18 +3,18 @@ package com.redrunner.controller;
 import java.io.File;
 
 import org.apache.log4j.Logger;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.redrunner.geocoordinates.Coordinates;
 import com.redrunner.geocoordinates.GeoCodeSample;
 import com.redrunner.utils.Constants;
-import com.redrunner.utils.DAO;
 import com.redrunner.utils.FileParser;
 
 @Component
 public class ScheduledTasks {
-	static Logger logger = Logger.getLogger(ScheduledTasks.class);
+	static Logger log = Logger.getLogger(ScheduledTasks.class);
 
 	@Scheduled(fixedRate = 20000)
 	public void reportCurrentTime() {
@@ -28,7 +28,7 @@ public class ScheduledTasks {
 			FileParser.FileCleaner(Constants.TIMESTAMP_FILE_PATH);
 			FileParser.FileCleaner(Constants.TRAFFIC_FILE_PATH);
 			FileParser.FileWritter(Constants.TIMESTAMP_FILE_PATH, trafficTimeStamp + "");
-			logger.info(
+			log.info(
 					"\n\n\t---------------------+Saving lattest batch into DB and resetting files+---------------------");
 
 			for (int i = 0; i < lines.length; i++) {
@@ -41,10 +41,10 @@ public class ScheduledTasks {
 				coord.setName(street);
 				coord.setTimeStamp(System.currentTimeMillis() + "");
 
-				DAO.insertRecord(coord);
-				logger.info("Saved: " + coord.toString());
+				// DAO.insertRecord(coord);
+				log.info("Saved: " + coord.toString());
 			}
-			logger.info("\n\n\t---------------------+Starting new batch+---------------------");
+			log.info("\n\n\t---------------------+Starting new batch+---------------------");
 
 		}
 	}
@@ -55,10 +55,4 @@ public class ScheduledTasks {
 		Long timestamp = Long.parseLong(FileParser.FileReader(timestampFile));
 		return !trafficTimeStamp.equals(timestamp);
 	}
-
-	// public static void main(String[] args) {
-	// ScheduledTasks t = new ScheduledTasks();
-	// t.reportCurrentTime();
-	// }
-
 }
