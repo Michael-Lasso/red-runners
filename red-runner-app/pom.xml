@@ -58,6 +58,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>mywebtest</finalName>
+		
 	</build>
 </project>
