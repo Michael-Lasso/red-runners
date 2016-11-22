@@ -4,7 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Coordinates {
+import com.lokiz.ibatis.service.PersistService;
+
+public class Coordinates implements PersistService {
+
 	private String latitude;
 	private String longitude;
 	private String name;
@@ -67,6 +70,12 @@ public class Coordinates {
 		// TODO Auto-generated method stub
 		return "-" + name + ", Milliseconds: " + timeStamp + ", Date: " + date + ", Latitude: " + latitude
 				+ ", Longitude: " + longitude;
+	}
+
+	@Override
+	public String getObjectData() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

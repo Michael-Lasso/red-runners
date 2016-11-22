@@ -21,26 +21,24 @@ import java.util.Map;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import bookmarks.Application;
+import com.lokiz.ibatis.controller.ConnectorService;
+import com.lokiz.ibatis.controller.RedRunnerConnector;
+import com.lokiz.ibatis.domain.Coordinates;
+
 
 /**
  * @author Dave Syer
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@IntegrationTest("server.port=0")
-@WebAppConfiguration
+// @RunWith(SpringJUnit4ClassRunner.class)
+// @SpringApplicationConfiguration(classes = Application.class)
+// @IntegrationTest("server.port=0")
+// @WebAppConfiguration
 public class ApplicationTests2 {
 
 	@Value("${local.server.port}")
@@ -57,8 +55,17 @@ public class ApplicationTests2 {
 		Map<String, Object> token = new TestRestTemplate("android-bookmarks", "123456")
 				.postForObject("http://localhost:8080/security/oauth/token", request, Map.class);
 		assertNotNull("Wrong response: " + token, token.get("access_token"));
-		///Users/michaellasso/Documents/tomcat.keystore
-		//curl -X POST -vu android-bookmarks:123456 http://localhost:8080/oauth/token -H "Accept: application/json" -d "password=cordoba32&username=mlasso&grant_type=password&scope=write&client_secret=123456&client_id=android-bookmarks"
+		/// Users/michaellasso/Documents/tomcat.keystore
+		// curl -X POST -vu android-bookmarks:123456
+		/// http://localhost:8080/oauth/token -H "Accept: application/json" -d
+		/// "password=cordoba32&username=mlasso&grant_type=password&scope=write&client_secret=123456&client_id=android-bookmarks"
+	}
+
+	@Test
+	public void testConnector() {
+
+		ConnectorService connector = new RedRunnerConnector();
+		connector.persistObject("insertCoordinates", new Coordinates());
 	}
 
 }

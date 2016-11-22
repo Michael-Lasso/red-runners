@@ -3,7 +3,7 @@ package com.lokiz.ibatis.util;
 public final class ProgramConstants {
 
 	// ---------------------------- DAO Objects ----------------------------
-	public static final String TMP_MCIS_DAO = "mcisDAO";
+	public static final String OBJ_DAO = "mcisDAO";
 
 	// --------------------------- Query Strings ---------------------------
 	public static final String SELECT_1 = "select1";
@@ -26,5 +26,7 @@ public final class ProgramConstants {
 
 	// ------------------------- Testing Variables --------------------------
 	public static final String TEST = "test";
+
+	public static final String INSERT_COORDINATES = "insertCoordinates";
 
 }

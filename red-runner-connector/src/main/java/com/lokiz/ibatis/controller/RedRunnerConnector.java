@@ -1,21 +1,19 @@
 package com.lokiz.ibatis.controller;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.lokiz.ibatis.dao.ObejctDAO;
-import com.lokiz.ibatis.domain.Coordinates;
-import com.lokiz.ibatis.service.SurveillanceParameter;
-import com.lokiz.ibatis.service.SurveillanceProcessor;
+import com.lokiz.ibatis.service.PersistService;
+import com.lokiz.ibatis.service.IbatisParameter;
+import com.lokiz.ibatis.service.IbatisProcessor;
 import com.lokiz.ibatis.util.ProgramConstants;
 
-public class Surveillance implements SurveillanceProcessor {
+public class RedRunnerConnector implements IbatisProcessor, ConnectorService {
 
-	private static final Log log = LogFactory.getLog(Surveillance.class);
+	private static final Log log = LogFactory.getLog(RedRunnerConnector.class);
 	private final ObejctDAO objDAO;
 
 	/**
@@ -23,22 +21,18 @@ public class Surveillance implements SurveillanceProcessor {
 	 * @param tdateStr
 	 * @throws Exception
 	 */
-	public Surveillance() throws Exception {
+	public RedRunnerConnector() {
 		@SuppressWarnings("resource")
 		final ApplicationContext ctx = new ClassPathXmlApplicationContext(ProgramConstants.APPLICATION_CONTEXT);
-		objDAO = (ObejctDAO) ctx.getBean(ProgramConstants.TMP_MCIS_DAO);
+		objDAO = (ObejctDAO) ctx.getBean(ProgramConstants.OBJ_DAO);
 	}
 
-	/**
-	 * Execute queries
-	 * 
-	 * @throws Exception
-	 * 
-	 */
-	private void executeQueries() throws Exception {
-		log.info("Executing Queries");
-		List<Coordinates> list = objDAO.getList(ProgramConstants.GET_LIST, null);
-		log.info(list.size());
+	public void persistObject(String queryId, PersistService object) {
+		try {
+			objDAO.insertQuery(queryId, object);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -58,9 +52,9 @@ public class Surveillance implements SurveillanceProcessor {
 	}
 
 	@Override
-	public <T extends SurveillanceParameter> void process(Class<T> t) throws Exception {
+	public <T extends IbatisParameter> void process(Class<T> t) throws Exception {
 		cleanDB();
-		executeQueries();// program execute functions here
+
 		cleanDB();
 	}
 }

@@ -15,20 +15,19 @@
  */
 package bookmarks;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.Resources;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.URI;
-import java.security.Principal;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.lokiz.ibatis.controller.ConnectorService;
+import com.lokiz.ibatis.controller.RedRunnerConnector;
+import com.lokiz.ibatis.domain.Coordinates;
 
 /**
  * @author Josh Long
@@ -39,25 +38,24 @@ import java.util.stream.Collectors;
 @RequestMapping("/persist")
 class PersistRestController {
 
-
 	private final AccountRepository accountRepository;
+	private static ConnectorService connector = new RedRunnerConnector();
 
 	@Autowired
 	PersistRestController(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
 	}
 
-//	@RequestMapping(method = RequestMethod.POST)
-//	ResponseEntity<?> add(Principal principal, @RequestBody Bookmark input) {
-//		this.validateUser(principal);
-//		return accountRepository.findByUsername(principal.getName()).map(account -> {
-//			Bookmark bookmark = bookmarkRepository.save(new Bookmark(account, input.uri, input.description));
-//
-//			Link forOneBookmark = new BookmarkResource(bookmark).getLink(Link.REL_SELF);
-//
-//			return ResponseEntity.created(URI.create(forOneBookmark.getHref())).build();
-//		}).orElse(ResponseEntity.noContent().build());
-//	}
+	@RequestMapping(method = RequestMethod.POST)
+	ResponseEntity<?> add(Principal principal, @RequestBody Coordinates coords) {
+		this.validateUser(principal);
+		return accountRepository.findByUsername(principal.getName()).map(account -> {
+
+			connector.persistObject("", coords);
+
+			return new ResponseEntity<String>("Successfull test", HttpStatus.CREATED);
+		}).orElse(new ResponseEntity<String>("Unsuccessfull test", HttpStatus.BAD_REQUEST));
+	}
 
 	private void validateUser(Principal principal) {
 		String userId = principal.getName();

@@ -20,6 +20,12 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		]]>
 	</select>
 
+	<insert id="insertCoordinates" parameterClass="coordinates">
+		<![CDATA[
+			INSERT INTO LOCATION (STREET_NAME, LATITUDE,  LONGITUDE,  TIMESTAMP) VALUES ('T',0,0,0)
+		]]>
+	</insert>
+
 	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 	<!-- ///////////////////////////////////////// CLEAN DATABASE ///////////////////////////////////////////////// -->

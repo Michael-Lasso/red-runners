@@ -67,7 +67,7 @@ class BookmarkRestController {
 			Bookmark bookmark = bookmarkRepository.save(new Bookmark(account, input.uri, input.description));
 
 			Link forOneBookmark = new BookmarkResource(bookmark).getLink(Link.REL_SELF);
-
+			URI.create(forOneBookmark.getHref()).toString();
 			return ResponseEntity.created(URI.create(forOneBookmark.getHref())).build();
 		}).orElse(ResponseEntity.noContent().build());
 	}

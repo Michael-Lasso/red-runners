@@ -34,6 +34,12 @@ public class Application extends SpringBootServletInitializer {
 		SpringApplication.run(Application.class, args);
 	}
 
+	@Value("${rest.users}")
+	private String users;
+
+	@Value("${rest.password}")
+	private String password;
+
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
@@ -72,11 +78,10 @@ public class Application extends SpringBootServletInitializer {
 	}
 
 	@Bean
-	CommandLineRunner init(AccountRepository accountRepository, BookmarkRepository bookmarkRepository) {
-		return (evt) -> Arrays.asList("dlasso,mlasso".split(",")).forEach(a -> {
-			Account account = accountRepository.save(new Account(a, "Colombia1"));
-			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/1/" + a, "A description"));
-			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/2/" + a, "A description"));
+	CommandLineRunner init(AccountRepository accountRepository) {
+		return (evt) -> Arrays.asList(users.split(",")).forEach(a -> {
+			accountRepository.save(new Account(a, password));
+
 		});
 	}
 

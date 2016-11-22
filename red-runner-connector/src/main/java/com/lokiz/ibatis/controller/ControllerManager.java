@@ -3,7 +3,7 @@ package com.lokiz.ibatis.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.lokiz.ibatis.service.SurveillanceProcessor;
+import com.lokiz.ibatis.service.IbatisProcessor;
 
 public class ControllerManager {
 
@@ -12,9 +12,9 @@ public class ControllerManager {
 	public static void main(String[] args) {
 
 		log.info("<--------------------Starting ControllerManager-------------------->\n");
-		SurveillanceProcessor surveillance;
+		IbatisProcessor surveillance;
 		try {
-			surveillance = new Surveillance();
+			surveillance = new RedRunnerConnector();
 			surveillance.process(null);
 		} catch (Exception e) {
 			e.printStackTrace();
