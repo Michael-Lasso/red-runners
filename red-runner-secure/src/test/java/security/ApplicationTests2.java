@@ -41,31 +41,11 @@ import com.lokiz.ibatis.domain.Coordinates;
 // @WebAppConfiguration
 public class ApplicationTests2 {
 
-	@Value("${local.server.port}")
-	private int port;
-
-	@Ignore
-	@Test
-	public void testGrant() {
-		MultiValueMap<String, String> request = new LinkedMultiValueMap<String, String>();
-		request.set("username", "mlasso");
-		request.set("password", "password");
-		request.set("grant_type", "password");
-		@SuppressWarnings("unchecked")
-		Map<String, Object> token = new TestRestTemplate("android-bookmarks", "123456")
-				.postForObject("http://localhost:8080/security/oauth/token", request, Map.class);
-		assertNotNull("Wrong response: " + token, token.get("access_token"));
-		/// Users/michaellasso/Documents/tomcat.keystore
-		// curl -X POST -vu android-bookmarks:123456
-		/// http://localhost:8080/oauth/token -H "Accept: application/json" -d
-		/// "password=cordoba32&username=mlasso&grant_type=password&scope=write&client_secret=123456&client_id=android-bookmarks"
-	}
-
-	@Test
-	public void testConnector() {
-
-		ConnectorService connector = new RedRunnerConnector();
-		connector.persistObject("insertCoordinates", new Coordinates());
-	}
+//	@Test
+//	public void testConnector() {
+//
+//		ConnectorService connector = new RedRunnerConnector();
+//		connector.persistObject("insertCoordinates", new Coordinates());
+//	}
 
 }

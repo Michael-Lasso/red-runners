@@ -35,21 +35,21 @@ import java.util.stream.Collectors;
  * @author Greg Turnquist
  */
 // tag::code[]
-@RestController
-@RequestMapping("/bookmarks")
+// @RestController
+// @RequestMapping("/bookmarks")
 class BookmarkRestController {
 
 	private final BookmarkRepository bookmarkRepository;
 
 	private final AccountRepository accountRepository;
 
-	@Autowired
+	// @Autowired
 	BookmarkRestController(BookmarkRepository bookmarkRepository, AccountRepository accountRepository) {
 		this.bookmarkRepository = bookmarkRepository;
 		this.accountRepository = accountRepository;
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	// @RequestMapping(method = RequestMethod.GET)
 	Resources<BookmarkResource> readBookmarks(Principal principal) {
 		this.validateUser(principal);
 		System.out.println("\n\n\nXXX\n--1\n\nXXXXX");
@@ -59,7 +59,7 @@ class BookmarkRestController {
 		return new Resources<>(bookmarkResourceList);
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	// @RequestMapping(method = RequestMethod.POST)
 	ResponseEntity<?> add(Principal principal, @RequestBody Bookmark input) {
 		this.validateUser(principal);
 		System.out.println("\n\n\nXXX\n--2\n\nXXXXX");
@@ -72,7 +72,7 @@ class BookmarkRestController {
 		}).orElse(ResponseEntity.noContent().build());
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/{bookmarkId}")
+	// @RequestMapping(method = RequestMethod.GET, value = "/{bookmarkId}")
 	BookmarkResource readBookmark(Principal principal, @PathVariable Long bookmarkId) {
 		this.validateUser(principal);
 		System.out.println("\n\n\nXXX\n--3\n\nXXXXX");
