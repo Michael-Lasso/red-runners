@@ -18,13 +18,17 @@ public class DAO {
 		try {
 			stmt = conn.createStatement();
 
-			String sql1 = "CREATE TABLE LOCATION (STREET_NAME VARCHAR(100), LATITUDE VARCHAR(100), "
+			String sql = "CREATE SEQUENCE coordinate_id_seq START WITH 1 INCREMENT BY 1;"
+					+ "ALTER TABLE location ADD COLUMN id numeric DEFAULT nextval('coordinate_id_seq');"
+					+ "ALTER SEQUENCE coordinate_id_seq OWNED BY location.id;";
+			String sql1 = "CREATE TABLE LOCATION (ID numeric, STREET_NAME VARCHAR(100), LATITUDE VARCHAR(100), "
 					+ " LONGITUDE VARCHAR(100),  TIMESTAMP VARCHAR(100))";
-
 			String sql2 = "DROP TABLE LOCATION ";
 
-			stmt.executeUpdate(sql2);
-			stmt.executeUpdate(sql1);
+			// stmt.executeUpdate(sql2);
+			// stmt.executeUpdate(sql1);
+//			stmt.executeUpdate("drop table account;");
+			stmt.executeUpdate("CREATE TABLE bookmark (id INT AUTO_INCREMENT primary key NOT NULL, uri VARCHAR(20), description VARCHAR(25))");
 		} catch (SQLException se) {
 			se.printStackTrace();
 		} catch (Exception e) {
@@ -155,12 +159,12 @@ public class DAO {
 		return list;
 	}// end main
 
-	// public static void main(String[] args) {
-	// DAO dao = new DAO();
-	// Connection conn = getConnection();
-	//// dao.delete(conn);
-	// List<Coordinates> list = DAO.select();
-	// list.forEach(a -> System.out.println(a));
-	// }
+	public static void main(String[] args) {
+		DAO dao = new DAO();
+		Connection conn = getConnection();
+		dao.create(conn);
+		// List<Coordinates> list = DAO.select();
+		// list.forEach(a -> System.out.println(a));
+	}
 
 }

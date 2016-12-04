@@ -19,3 +19,9 @@ dependency-reduced-pom.xml
 /miscellaneous/*
 *.properties
 *.log
+**/Servers/*
+*.recomenders
+.recomenders/*
+**/.recomenders/*
+**/.recommenders/*
+**/.metadata/*
