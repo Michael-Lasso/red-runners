@@ -25,3 +25,5 @@ dependency-reduced-pom.xml
 **/.recomenders/*
 **/.recommenders/*
 **/.metadata/*
+*.factorypath
+red-runner-rest/src/main/webapp/
