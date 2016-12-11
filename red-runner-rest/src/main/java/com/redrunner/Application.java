@@ -22,10 +22,10 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 
-import com.redrunner.model.Account;
-import com.redrunner.model.AccountRepository;
-import com.redrunner.model.Bookmark;
-import com.redrunner.model.BookmarkRepository;
+import com.redrunner.model.domain.Account;
+import com.redrunner.model.domain.Street_Intersection;
+import com.redrunner.model.repos.AccountRepository;
+import com.redrunner.model.repos.Street_IntersectionRepository;
 
 // tag::code[]
 //

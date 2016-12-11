@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.redrunner;
+package com.redrunner.rest;
 
 import java.net.URI;
 import java.security.Principal;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -30,9 +28,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.redrunner.model.AccountRepository;
-import com.redrunner.model.Bookmark;
-import com.redrunner.model.BookmarkRepository;
+import com.redrunner.model.domain.Street_Intersection;
+import com.redrunner.model.repos.AccountRepository;
+import com.redrunner.model.repos.Red_RunnerRepository;
+import com.redrunner.model.repos.Street_IntersectionRepository;
+import com.redrunner.rest.security.UserNotFoundException;
 
 /**
  * @author Josh Long
@@ -44,10 +44,13 @@ import com.redrunner.model.BookmarkRepository;
 class BookmarkRestController {
 
 	@Autowired
-	private BookmarkRepository bookmarkRepository;
+	private Street_IntersectionRepository street_IntersectionRepository;
 
 	@Autowired
 	private AccountRepository accountRepository;
+	
+	@Autowired
+	private Red_RunnerRepository red_RunnerRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	Resources<BookmarkResource> readBookmarks(Principal principal) {
@@ -61,11 +64,11 @@ class BookmarkRestController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	ResponseEntity<?> add(Principal principal, @RequestBody Bookmark input) {
+	ResponseEntity<?> add(Principal principal, @RequestBody Street_Intersection input) {
 		this.validateUser(principal);
 
 		return accountRepository.findByUsername(principal.getName()).map(account -> {
-			Bookmark bookmark = bookmarkRepository.save(new Bookmark(input.getUri(), input.getDescription()));
+			Street_Intersection bookmark = street_IntersectionRepository.save(new Street_Intersection(input.getUri(), input.getDescription()));
 
 			Link forOneBookmark = new BookmarkResource(bookmark).getLink(Link.REL_SELF);
 
@@ -76,7 +79,7 @@ class BookmarkRestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/{bookmarkId}")
 	BookmarkResource readBookmark(Principal principal, @PathVariable Long bookmarkId) {
 		this.validateUser(principal);
-		return new BookmarkResource(this.bookmarkRepository.findOne(bookmarkId));
+		return new BookmarkResource(this.street_IntersectionRepository.findOne(bookmarkId));
 	}
 
 	private void validateUser(Principal principal) {

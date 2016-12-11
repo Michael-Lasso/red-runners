@@ -1,7 +1,9 @@
-package com.redrunner.model;
+package com.redrunner.model.repos;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.redrunner.model.domain.Account;
 
 import java.util.Optional;
 

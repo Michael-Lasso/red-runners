@@ -1,11 +1,11 @@
-package com.redrunner.model;
+package com.redrunner.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Bookmark {
+public class Street_Intersection {
 
 	@Id
 	@GeneratedValue
@@ -15,10 +15,10 @@ public class Bookmark {
 
 	private String description;
 
-	public Bookmark() { // jpa only
+	public Street_Intersection() { // jpa only
 	}
 
-	public Bookmark(String uri, String description) {
+	public Street_Intersection(String uri, String description) {
 		this.uri = uri;
 		this.description = description;
 	}

@@ -13,32 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.redrunner;
-
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.ResourceSupport;
-
-import com.redrunner.model.Bookmark;
-
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
+package com.redrunner.rest.security;
 
 /**
- * @author Greg Turnquist
+ * @author Josh Long
  */
+@SuppressWarnings("serial")
 // tag::code[]
-class BookmarkResource extends ResourceSupport {
+public class UserNotFoundException extends RuntimeException {
 
-	private final Bookmark bookmark;
-
-	public BookmarkResource(Bookmark bookmark) {
-
-		this.bookmark = bookmark;
-		this.add(new Link(bookmark.getUri(), "bookmark-uri"));
-
-	}
-
-	public Bookmark getBookmark() {
-		return bookmark;
+	public UserNotFoundException(String userId) {
+		super("could not find user '" + userId + "'.");
 	}
 }
 // end::code[]

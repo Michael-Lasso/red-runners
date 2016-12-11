@@ -1,4 +1,4 @@
-package com.redrunner.model;
+package com.redrunner.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
