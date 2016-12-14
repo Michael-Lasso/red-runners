@@ -1,5 +1,6 @@
 package com.redrunner.model.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,8 +12,10 @@ public class Red_Runner {
 	@GeneratedValue
 	private Long red_runner_id;
 
-	private Long streetId;
+	@Column
+	private Long streetid;
 
+	@Column
 	private Long timestamp;
 
 	public Long getRed_runner_id() {
@@ -23,12 +26,12 @@ public class Red_Runner {
 		this.red_runner_id = red_runner_id;
 	}
 
-	public Long getStreetId() {
-		return streetId;
+	public Long getStreetid() {
+		return streetid;
 	}
 
-	public void setStreetId(Long streetId) {
-		this.streetId = streetId;
+	public void setStreetid(Long streetid) {
+		this.streetid = streetid;
 	}
 
 	public Long getTimestamp() {
@@ -41,4 +44,10 @@ public class Red_Runner {
 
 	public Red_Runner() { // jpa only
 	}
+
+	public Red_Runner(Long streetid, Long timestamp) {
+		this.streetid = streetid;
+		this.timestamp = timestamp;
+	}
+
 }

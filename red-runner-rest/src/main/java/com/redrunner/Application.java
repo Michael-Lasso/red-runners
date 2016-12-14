@@ -1,7 +1,6 @@
 package com.redrunner;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -21,11 +19,6 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
-
-import com.redrunner.model.domain.Account;
-import com.redrunner.model.domain.Street_Intersection;
-import com.redrunner.model.repos.AccountRepository;
-import com.redrunner.model.repos.Street_IntersectionRepository;
 
 // tag::code[]
 //
@@ -75,6 +68,13 @@ public class Application extends SpringBootServletInitializer {
 			}
 		});
 	}
+
+	// @Bean
+	// CommandLineRunner init(AccountRepository accountRepository) {
+	// return (evt) -> Arrays.asList("micha32,davis".split(",")).forEach(a -> {
+	// accountRepository.save(new Account(a, "cordoba32"));
+	// });
+	// }
 
 }
 // end::code[]

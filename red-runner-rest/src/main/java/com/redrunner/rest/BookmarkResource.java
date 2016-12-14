@@ -20,8 +20,6 @@ import org.springframework.hateoas.ResourceSupport;
 
 import com.redrunner.model.domain.Street_Intersection;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
-
 /**
  * @author Greg Turnquist
  */
@@ -33,7 +31,7 @@ class BookmarkResource extends ResourceSupport {
 	public BookmarkResource(Street_Intersection bookmark) {
 
 		this.bookmark = bookmark;
-		this.add(new Link(bookmark.getUri(), "bookmark-uri"));
+		
 
 	}
 
