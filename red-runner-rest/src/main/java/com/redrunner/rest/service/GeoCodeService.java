@@ -20,16 +20,17 @@ import javax.ws.rs.core.Response;
 import org.glassfish.jersey.internal.util.Base64;
 
 import com.redrunner.model.domain.Coordinates;
+import com.redrunner.model.domain.PitneyBowesCredentials;
 import com.redrunner.rest.utils.Constants;
 
-public class GeoCodeSample {
+public class GeoCodeService {
 
 	private static String accessToken;
 
-	public static String getStreetName(Coordinates coords) {
+	public static String getStreetName(Coordinates coords, PitneyBowesCredentials credentials) {
 
 		// Acquires OAuth2 token
-		acquireAuthToken();
+		acquireAuthToken(credentials);
 
 		// Gets reverse response as transient in JSON format
 		return getReverseGeocode(false, "premium", coords);
@@ -38,9 +39,9 @@ public class GeoCodeSample {
 	/**
 	 * Acquires OAuth2 token for accessing Location Intelligence APIs
 	 */
-	private static void acquireAuthToken() {
+	private static void acquireAuthToken(PitneyBowesCredentials credentials) {
 		String authHeader = Constants.BASIC
-				+ Base64.encodeAsString(Constants.API_KEY + Constants.COLON + Constants.SECRET);
+				+ Base64.encodeAsString(credentials.getApi_key() + Constants.COLON + credentials.getSecret());
 
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target(Constants.OAUTH2_TOKEN_URL);

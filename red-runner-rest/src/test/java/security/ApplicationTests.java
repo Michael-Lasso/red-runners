@@ -54,7 +54,7 @@ public class ApplicationTests {
 		request.set("password", "password");
 		request.set("grant_type", "password");
 		@SuppressWarnings("unchecked")
-		Map<String, Object> token = new TestRestTemplate("android-bookmarks", "123456")
+		Map<String, Object> token = new TestRestTemplate("web-redrunner", "021587")
 				.postForObject("http://localhost:" + port + "/oauth/token", request, Map.class);
 		assertNotNull("Wrong response: " + token, token.get("access_token"));
 	}

@@ -29,7 +29,7 @@ import com.redrunner.rest.security.UserNotFoundException;
  */
 // tag::code[]
 @ControllerAdvice
-class BookmarkControllerAdvice {
+class RedRunnerControllerAdvice {
 
 	@ResponseBody
 	@ExceptionHandler(UserNotFoundException.class)

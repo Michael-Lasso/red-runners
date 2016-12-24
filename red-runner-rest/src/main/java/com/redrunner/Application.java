@@ -22,8 +22,8 @@ import org.springframework.http.HttpStatus;
 
 // tag::code[]
 //
-// curl -X POST -vu android-bookmarks:123456 http://localhost:8080/oauth/token -H "Accept: application/json" -d "password=password&username=jlong&grant_type=password&scope=write&client_secret=123456&client_id=android-bookmarks"
-// curl -v POST http://127.0.0.1:8080/bookmarks -H "Authorization: Bearer <oauth_token>""
+// curl -X POST -vu web-redrunner:021587 http://localhost:8080/oauth/token -H "Accept: application/json" -d "password=password&username=jlong&grant_type=password&scope=write&client_secret=021587&client_id=web-redrunner"
+// curl -v POST http://127.0.0.1:8080/redrunner -H "Authorization: Bearer <oauth_token>""
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {

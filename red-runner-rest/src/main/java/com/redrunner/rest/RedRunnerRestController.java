@@ -24,86 +24,92 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redrunner.model.domain.Coordinates;
-import com.redrunner.model.domain.Red_Runner;
-import com.redrunner.model.domain.Street_Intersection;
+import com.redrunner.model.domain.PitneyBowesCredentials;
+import com.redrunner.model.domain.RedRunner;
+import com.redrunner.model.domain.StreetIntersection;
 import com.redrunner.model.repos.AccountRepository;
-import com.redrunner.model.repos.Red_RunnerRepository;
-import com.redrunner.model.repos.Street_IntersectionRepository;
+import com.redrunner.model.repos.RedRunnerRepository;
+import com.redrunner.model.repos.StreetIntersectionRepository;
 import com.redrunner.rest.security.UserNotFoundException;
-import com.redrunner.rest.service.GeoCodeSample;
+import com.redrunner.rest.service.GeoCodeService;
 
+@Component
 @RestController
-@RequestMapping("/bookmarks")
-class BookmarkRestController {
+@RequestMapping("/redrunner")
+class RedRunnerRestController {
 
-	static Logger log = Logger.getLogger(BookmarkRestController.class);
+	static Logger log = Logger.getLogger(RedRunnerRestController.class);
 
-	@Value("${json.path}")
+	@Value("${redrunner.json.path}")
 	private String json;
 
+	@Value("${redrunner.pitney.api_key}")
+	private String api_key;
+
+	@Value("${redrunner.pitney.secret}")
+	private String secret;
+
 	@Autowired
-	private Street_IntersectionRepository street_IntersectionRepository;
+	private StreetIntersectionRepository streetIntersectionRepository;
 
 	@Autowired
 	private AccountRepository accountRepository;
 
 	@Autowired
-	private Red_RunnerRepository red_RunnerRepository;
+	private RedRunnerRepository red_RunnerRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
-	Resources<BookmarkResource> readBookmarks(Principal principal) {
+	Resources<IntersectionResource> readBookmarks(Principal principal) {
 		this.validateUser(principal);
 
-		// List<BookmarkResource> bookmarkResourceList =
+		// List<IntersectionResource> bookmarkResourceList =
 		// bookmarkRepository.findByAccountUsername(principal.getName())
-		// .stream().map(BookmarkResource::new).collect(Collectors.toList());
+		// .stream().map(IntersectionResource::new).collect(Collectors.toList());
 
 		return new Resources<>(null);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	ResponseEntity<Street_Intersection> add(Principal principal, @RequestBody Street_Intersection input) {
+	ResponseEntity<StreetIntersection> add(Principal principal, @RequestBody StreetIntersection input) {
 		this.validateUser(principal);
 		if (input == null) {
-			return new ResponseEntity<Street_Intersection>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<StreetIntersection>(HttpStatus.NOT_FOUND);
 		} else {
-			Optional<Street_Intersection> obj = street_IntersectionRepository
+			Optional<StreetIntersection> obj = streetIntersectionRepository
 					.findByLongitudeAndLatitude(input.getLongitude(), input.getLatitude());
 			if (obj.isPresent()) {
-				log.info("Found an intersection: " + obj.get().toString());
-				long streetid = obj.get().getStreet_intersection_id();
-				red_RunnerRepository
-						.save(new Red_Runner(streetid, obj.get().getTimestamp()));
+				log.debug("Found an intersection: " + obj.get().toString());
+				long streetid = obj.get().getStreetid();
+				red_RunnerRepository.save(new RedRunner(input.getTimestamp()));
 			} else {
-				log.info("No intersection found, computing new one.");
+				log.debug("No intersection found, computing new one.");
 				Coordinates coord = new Coordinates();
 				coord.setLatitude(input.getLatitude());
 				coord.setLongitude(input.getLongitude());
-				String name = GeoCodeSample.getStreetName(coord);
-				input.setStreet_intersection(name);
-				// street_IntersectionRepository.save(
-				// new Street_Intersection(name, input.getLongitude(),
-				// input.getLatitude(), input.getTimestamp()));
-				// red_RunnerRepository
-				// .save(new Red_Runner(obj.get().getStreet_intersection_id(),
-				// obj.get().getTimestamp()));
+				PitneyBowesCredentials credentials = new PitneyBowesCredentials(api_key, secret);
+				String name = GeoCodeService.getStreetName(coord, credentials);
+				input.setStreetName(name);
+
+				streetIntersectionRepository.save(
+						new StreetIntersection(name, input.getLongitude(), input.getLatitude(), input.getTimestamp()));
+
+				Optional<StreetIntersection> obj2 = streetIntersectionRepository
+						.findByLongitudeAndLatitude(input.getLongitude(), input.getLatitude());
+
+				long streetid = obj2.get().getStreetid();
+				RedRunner red = new RedRunner( input.getTimestamp());
+				red.setStreetIntersection(obj2.get());
+				red_RunnerRepository.save(red);
 			}
-
-			return new ResponseEntity<Street_Intersection>(input, HttpStatus.OK);
+			return new ResponseEntity<StreetIntersection>(input, HttpStatus.OK);
 		}
-	}
-
-	@RequestMapping(method = RequestMethod.GET, value = "/{bookmarkId}")
-	BookmarkResource readBookmark(Principal principal, @PathVariable Long bookmarkId) {
-		this.validateUser(principal);
-		return new BookmarkResource(this.street_IntersectionRepository.findOne(bookmarkId));
 	}
 
 	private void validateUser(Principal principal) {

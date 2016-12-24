@@ -15,28 +15,24 @@
  */
 package com.redrunner.rest;
 
-import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 
-import com.redrunner.model.domain.Street_Intersection;
+import com.redrunner.model.domain.StreetIntersection;
 
 /**
  * @author Greg Turnquist
  */
 // tag::code[]
-class BookmarkResource extends ResourceSupport {
+class IntersectionResource extends ResourceSupport {
 
-	private final Street_Intersection bookmark;
+	private final StreetIntersection street_intersection;
 
-	public BookmarkResource(Street_Intersection bookmark) {
-
-		this.bookmark = bookmark;
-		
-
+	public IntersectionResource(StreetIntersection bookmark) {
+		this.street_intersection = bookmark;
 	}
 
-	public Street_Intersection getBookmark() {
-		return bookmark;
+	public StreetIntersection getBookmark() {
+		return street_intersection;
 	}
 }
 // end::code[]
